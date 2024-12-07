@@ -1,0 +1,21 @@
+# Challenge_Day_2: 7_Dec_2024: Arithmetic Operations
+# The provided code stub reads two integers from STDIN,  and . Add code to print three lines where:
+# The first line contains the sum of the two numbers.
+# The second line contains the difference of the two numbers (first - second).
+# The third line contains the product of the two numbers.
+# The fourth line contains the result of integer division,  //
+# The fifth line should contain the result of float division,  / .
+
+num_1 = int(input("Please enter number_1: "))
+num_2 = int(input("Please enter number_2: "))
+sum = num_1 + num_2
+difference = num_1 - num_2
+mult = num_1 * num_2
+div_int = num_1 // num_2
+div_float = num_1 / num_2
+
+print( "The sum is: ", sum)
+print("The difference is:", difference)
+print("The multiplication is: ", mult)
+print("The integer division is:", div_int)
+print("The float division is:", div_float)
