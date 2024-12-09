@@ -1,0 +1,8 @@
+#Day 3: 9, Dec, 2024_ Challenge_3 : The provided code stub reads and integer,n, from STDIN. For all non-negative integers
+# i<n , print i2.
+
+n = int(input("Enter a number between 1 to 20: "))
+for i in range(0, n):
+    print("The number is:", i)
+    square_i = i**2
+    print("The square is:", square_i)
