@@ -1,0 +1,22 @@
+#Challenge 2: 11, Dec, 2024: Given the meal price (base cost of a meal), tip percent (the percentage of the meal price being added as tip),
+# and tax percent (the percentage of the meal price being added as tax) for a meal,
+# find and print the meal's total cost. Round the result to the nearest integer.
+# Function Description
+# Complete the solve function in the editor below.
+# solve has the following parameters:
+# int meal_cost: the cost of food before tip and tax
+# int tip_percent: the tip percentage
+# int tax_percent: the tax percentage
+# Returns The function returns nothing. Print the calculated value, rounded to the nearest integer.
+def solve (meal_cost, tip_percent, tax_percent):
+    tip = meal_cost * (tip_percent/100) #calculate tip according to the tip_percent, must divide by 100 for percentage
+    tax = meal_cost * (tax_percent/100) #calculate tax according to the tax_percent, must divide by 100 for percentage
+    total_cost = meal_cost + tip + tax
+    result = round (total_cost) #round the result via built-in round function
+    print (result) #print result in the proposed function
+    return result
+
+meal_cost = float (input("Enter meal cost: "). strip()) #ask for float number for meal cost, convert to float number, apply built-in strip function to avoid whitespace
+tip_percent = int(input("Enter tip percentage: "). strip()) #ask for integer number for tip, convert to integer number
+tax_percent = int(input("Enter tax percentage: "). strip()) #ask for integer number for tax, conver to integer number
+solve (meal_cost, tip_percent, tax_percent) #called solve function
