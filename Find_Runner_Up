@@ -1,0 +1,7 @@
+#Challenge 7: 16 December, 2024: Given the participants' score sheet for your University Sports Day, you are required to find the runner-up score.
+# You are given n scores. Store them in a list and find the score of the runner-up.
+n = int(input("Please enter the number of scores: ")) # Read number of scores
+arr = list(map(int, input("Enter the scores seperated by spaces: ").split())) #This line converts the given scores into the list
+max_scores = max(arr)  # Find the maximum score
+runner_up = max(x for x in arr if x!=max_scores)       # Find the second highest score
+print("Runner_up score is:", runner_up)
