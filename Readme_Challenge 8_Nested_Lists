@@ -1,0 +1,59 @@
+# Create an empty list to store the nested list
+nested_list = []
+
+# Input the number of sublists
+for _ in range(int(input("Enter the number of students: "))):
+    name = input("Enter the name: ")
+    score = float(input("Enter the score: "))
+    # Add a sublist [name, score] to the main list
+    nested_list.append([name, score])
+
+print("Nested List:", nested_list)
+Explanation
+Loop: The loop runs n times, where n is the number of name-score pairs.
+Input: In each iteration, we take two inputs — name (a string) and score (a float).
+Append: We create a sublist [name, score] and append it to the nested_list.
+Sample Input
+mathematica
+Copy code
+Enter the number of students: 3
+Enter the name: Alice
+Enter the score: 85.5
+Enter the name: Bob
+Enter the score: 90.0
+Enter the name: Charlie
+Enter the score: 78.5
+Explanation:
+
+The first student's name is Alice, and her score is 85.5.
+The second student's name is Bob, and his score is 90.0.
+The third student's name is Charlie, and his score is 78.5.
+Output
+less
+Copy code
+Nested List: [['Alice', 85.5], ['Bob', 90.0], ['Charlie', 78.5]]
+How It Works
+Input: Number of students → 3
+Loop:
+Iteration 1: name = 'Alice', score = 85.5, add ['Alice', 85.5] to the list.
+Iteration 2: name = 'Bob', score = 90.0, add ['Bob', 90.0] to the list.
+Iteration 3: name = 'Charlie', score = 78.5, add ['Charlie', 78.5] to the list.
+Final Nested List:
+
+css
+Copy code
+[['Alice', 85.5], ['Bob', 90.0], ['Charlie', 78.5]]
+Compact Version (List Comprehension)
+If you want a more concise version of the above code, you can use a list comprehension.
+
+python
+Copy code
+nested_list = [[input("Enter the name: "), float(input("Enter the score: "))] for _ in range(int(input("Enter the number of students: ")))]
+print("Nested List:", nested_list)
+Code Explanation:
+Explanation
+Input: The number of students and their respective names and scores are stored as a list of sublists, like [['Alice', 85.5], ['Bob', 90.0], ['Charlie', 78.5]].
+Extract unique scores: {score for name, score in students} extracts only the unique scores and sorted() arranges them in ascending order.
+Find second lowest score: The second element of the sorted scores list (scores[1]) is the second lowest.
+Get student names with that score: We loop through the list of students and collect the names of those with the second-lowest score.
+Sort names alphabetically: The names are sorted alphabetically before printing.
