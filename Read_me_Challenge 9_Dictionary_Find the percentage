@@ -1,0 +1,66 @@
+n = int(input())
+Purpose: This line reads a single input from the user, converts it to an integer, and assigns it to the variable n.
+What it does: It represents the number of students for whom you will input marks.
+Example: If the user enters 3, then n = 3. This means the program will expect details for 3 students.
+2️⃣ student_marks = {}
+Purpose: Initializes an empty dictionary called student_marks.
+What it does: The dictionary will store student names as keys and their corresponding marks as values (as a list of numbers).
+Example: Later, it could look like this:
+python
+Copy code
+student_marks = {'Alice': [78.0, 85.0, 90.0], 'Bob': [88.0, 92.0, 79.0]}
+3️⃣ for _ in range(n):
+Purpose: Starts a loop that will run n times.
+What it does: The variable _ is used as a "throwaway" variable since it's not being used within the loop. Each iteration collects input for one student.
+Example: If n = 3, then the loop runs 3 times to collect input for 3 students.
+4️⃣ name, *line = input().split()
+Purpose: Reads a single line of input, splits it into separate parts, and assigns the first part to name and the rest of the parts to line.
+How it works:
+input() reads the entire line as a string (like "Alice 78 85 90").
+.split() splits this string into parts: ['Alice', '78', '85', '90'].
+The first part ('Alice') is assigned to name, and the remaining parts (['78', '85', '90']) are collected into line as a list.
+Example: If the input is "Alice 78 85 90", then:
+python
+Copy code
+name = 'Alice' 
+line = ['78', '85', '90']
+5️⃣ scores = list(map(float, line))
+Purpose: Converts each of the values in line from strings to floating-point numbers and stores them in a list called scores.
+How it works:
+map(float, line) applies the float() function to each element in line, converting each of the elements like '78', '85', and '90' to 78.0, 85.0, and 90.0.
+list() turns the result of map() into a list of floats.
+Example:
+python
+Copy code
+line = ['78', '85', '90']
+scores = [78.0, 85.0, 90.0]
+6️⃣ student_marks[name] = scores
+Purpose: Adds a new entry to the student_marks dictionary, where the key is the student's name and the value is their list of scores.
+What it does: This line creates a new key-value pair in the dictionary.
+Example: If name = 'Alice' and scores = [78.0, 85.0, 90.0], then:
+python
+Copy code
+student_marks['Alice'] = [78.0, 85.0, 90.0]
+7️⃣ query_name = input()
+Purpose: Reads the name of a student whose marks you want to query.
+What it does: It stores the input (typically a student's name) in the variable query_name.
+Example: If you input 'Alice', then:
+python
+Copy code
+query_name = 'Alice'
+Summary
+Input n: Number of students.
+Loop n times to input each student's name and scores.
+Store the student name as a key and their list of scores as the value in student_marks.
+Input the name of a student to query later.
+Example Input
+Copy code
+3
+Alice 78 85 90
+Bob 88 92 79
+Charlie 70 80 90
+Bob
+Example State of Variables
+n = 3
+student_marks = {'Alice': [78.0, 85.0, 90.0], 'Bob': [88.0, 92.0, 79.0], 'Charlie': [70.0, 80.0, 90.0]}
+query_name = 'Bob'
