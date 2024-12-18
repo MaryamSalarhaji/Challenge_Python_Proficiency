@@ -1,0 +1,18 @@
+#Challenge 9= Finding_the_percentage: The provided code stub will read in a dictionary containing key/value pairs of name
+# :[marks] for a list of students.
+# Print the average of the marks array for the student name provided, showing 2 places after the decimal.
+
+##This line reads a single input from the user, converts it to an integer, and assigns it to the variable n
+n = int(input("Enter the number of students's record: "))
+student_marks = {} #Initializes an empty dictionary called student_marks
+for _ in range(n): #Starts a loop that will run n times
+#Reads a single line of input, splits it into separate parts, and assigns the first part to name and the rest of the parts to line
+    name, *line = input("Enter the name of students and the scores of the students with spaces: ").split()
+#: Converts each of the values in line from strings to floating-point numbers and stores them in a list called scores
+    scores = list(map(float, line))
+#Adds a new entry to the student_marks dictionary, where the key is the student's name and the value is their list of scores.
+    student_marks[name] = scores
+query_name = input("Enter the name of students you want to calculate average: ") #Reads the name of a student whose marks you want to query
+if query_name in student_marks:
+    scores = student_marks[query_name]
+    average = sum(scores) / len(scores)
