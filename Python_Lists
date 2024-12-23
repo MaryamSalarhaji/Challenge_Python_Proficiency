@@ -1,0 +1,65 @@
+#Challenge 10= 23 December 2024: Consider a list (list = []). You can perform the following commands:
+
+# insert i e: Insert integer e at position i.
+# print: Print the list.
+# remove e: Delete the first occurrence of integer e.
+# append e: Insert integer e at the end of the list.
+# sort: Sort the list.
+# pop: Pop the last element from the list.
+# reverse: Reverse the list.
+# Initialize your list and read in the value of n followed by n
+# lines of commands where each command will be of the 7 types listed above.
+# Iterate through each command in order and perform the corresponding operation on your list.
+
+# Initialize the list
+my_list = []
+
+#  Reads an integer n from the user, representing the number of commands to process.
+n = int(input("Enter the number of commands: ")) # prompts the user to enter data and converts the input string into an integer.
+
+# Iterate over each command
+# Loops exactly n times, once for each command. The variable _ is used
+# as a placeholder since its value isn't used inside the loop.
+for _ in range(n):
+
+# Read the command and split it into parts
+#Purpose: Reads a command string from the user and splits it into a list of strings.
+# How it works:
+# input() takes the full command as a string (e.g., "insert 0 5").
+# .split() breaks the string into parts based on spaces (e.g., ["insert", "0", "5"]).
+    command = input("Enter command: ").split()
+
+# Extract the command name and arguments
+#Purpose: Separates the command name (cmd) and its arguments (args).
+# Details:
+# cmd is the first element of the command list (e.g., "insert").
+# args contains the rest of the list as arguments (e.g., ["0", "5"]).
+    cmd = command[0]
+    args = command[1:]
+
+# Perform the corresponding operation
+#Purpose: Inserts an element e at index i in my_list.
+
+# map(int, args) converts arguments from strings to integers.
+# my_list.insert(i, e) inserts e at index i.
+    if cmd == "insert":
+        i, e = map(int, args)
+        my_list.insert(i, e)
+    elif cmd == "print":
+        print(my_list)
+# Purpose: Removes the first occurrence of element e from my_list.
+
+# int(args[0]) converts the argument to an integer.
+# my_list.remove(e) removes the element.
+    elif cmd == "remove":
+        e = int(args[0])
+        my_list.remove(e)
+    elif cmd == "append":
+        e = int(args[0])
+        my_list.append(e)
+    elif cmd == "sort":
+        my_list.sort()
+    elif cmd == "pop":
+        my_list.pop()
+    elif cmd == "reverse":
+        my_list.reverse()
