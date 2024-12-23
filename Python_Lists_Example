@@ -1,0 +1,11 @@
+#Input
+6
+append 1
+append 2
+insert 0 3
+print
+remove 1
+print
+#Output
+[3, 1, 2]
+[3, 2]
