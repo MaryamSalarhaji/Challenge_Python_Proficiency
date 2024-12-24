@@ -1,0 +1,22 @@
+# Challenge 11= 24 Dec, 2024: You are given a string and your task is to swap cases.
+# In other words, convert all lowercase letters to uppercase letters and vice versa.
+
+def swap_case(s):
+    """
+    Swaps the case of each character in the input string.
+
+    Args:
+        s (str): The input string.
+
+    Returns:
+        str: The string with swapped cases.
+
+    The function swap_case uses the built-in string method .swapcase() which automatically swaps lowercase letters
+     to uppercase and vice versa.
+    The function takes one argument, the input string s, and returns the modified string.
+    """
+    return s.swapcase()
+
+s = input("What is your favorite string: ")
+result = swap_case(s)
+print(result)
