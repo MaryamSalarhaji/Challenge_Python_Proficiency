@@ -1,0 +1,45 @@
+#Challenge 15: 31 Dec, 2024: A counter is a container that stores elements as dictionary keys,
+# and their counts are stored as dictionary values.
+
+# from collections import Counter
+# my_list = [1,1,2,3,4,5,3,2,3,4,2,1,2,3]
+# print(Counter(my_list))
+# print(Counter(my_list).items())
+# print(Counter(my_list).keys())
+# print(Counter(my_list).values())
+
+# Task
+#Raghu  is a shoe shop owner. His shop has X number of shoes.
+# He has a list containing the size of each shoe he has in his shop.
+# There are N number of customers who are willing to pay xi amount of money only if they get the shoe of their desired size.
+# Your task is to compute how much money  earned.
+#
+# Input Format
+# The first line contains X, the number of shoes.
+# The second line contains the space separated list of all the shoe sizes in the shop.
+# The third line contains N, the number of customers.
+# The next N lines contain the space separated values of the shoe size desired by the customer
+# and xi, the price of the shoe.
+
+from collections import Counter
+#Ask the user for the number of shoes
+X = int(input("Please Enter the number of shoes: "))
+#Ask the user for the list of shoe size in the shop
+shoe_size = input("Enter a list of shoe size separated by spaces: ")
+#Convert the input string to a list of numbers using map
+shoe_size_list = list(map(int, shoe_size.split()))
+count_available_shoe_size = Counter(shoe_size_list)
+#Ask for the number of customers
+N = int(input("Please enter the number of customers: "))
+#Initialize total earnings
+earnings = 0
+#Ask for the desired shoe size and the price, must enter N times
+for _ in range(N):
+    size, price = map(int, input("Enter the desired shoe size and price separated by a space: ").split())
+    if count_available_shoe_size[size] > 0:  # Check if the desired size is in stock
+        earnings += price  # Add price to earnings
+        count_available_shoe_size[size] -= 1  # Reduce the count of the shoe size
+    else:
+        continue  # Skip if the size is not available
+# Output the total earnings
+print("Total earning is:", earnings)
