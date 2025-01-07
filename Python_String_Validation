@@ -1,0 +1,10 @@
+#Challenge 17 = 7 Jan 2025= Python has built-in string validation methods for basic data.
+# It can check if a string is composed of alphabetical characters, alphanumeric characters, digits, etc.
+
+#Input from User
+string = input("Enter a string: ")
+print(any(i.isalnum() for i in string)) # use any to check for the occurrence of any alphanumeric in a string
+print(any(i.isalpha() for i in string)) # use any to check for the occurence of any alphabetical in a string
+print(any(i.isdigit() for i in string)) #use any to check for the occurence of any digit in a string
+print(any (i.islower() for i in string)) # use any to check for the occurence of any lowercase in a string
+print(any (i.isupper() for i in string)) #use any to check for the occurence of any uppercase in a string
