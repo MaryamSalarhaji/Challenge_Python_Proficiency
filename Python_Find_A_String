@@ -1,0 +1,28 @@
+#Challenge 16= 7 Jan, 2025: In this challenge, the user enters a string and a substring.
+# You have to print the number of times that the substring occurs in the given string.
+# String traversal will take place from left to right, not from right to left.
+#NOTE: String letters are case-sensitive.
+
+def count_substring(string, sub_string):
+    count = 0
+    start = 0
+    while start < len(string):
+        # Find the index of the next occurrence of the substring
+        start = string.find(sub_string, start)
+
+        # If the substring is found, increment the count
+        if start != -1:
+            count += 1
+            # Move the starting position by one to allow overlapping matches
+            start += 1
+        else:
+            break
+    return count
+
+# Input from user
+string = input("Enter the main string: ")
+substring = input("Enter the substring to search for: ")
+
+# Count and print the occurrences of the substring
+result = count_substring(string, substring)
+print(f"The substring '{substring}' occurs {result} times in the given string.")
