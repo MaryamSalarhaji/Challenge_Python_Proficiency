@@ -1,0 +1,20 @@
+#Challenge 18 = 8 Jan 2025: You are given a string  and width .
+# Your task is to wrap the string S into a paragraph of width w .
+# Function Description
+# Complete the wrap function in the editor below.
+# wrap has the following parameters:
+# string string: a long string
+# int max_width: the width to wrap to
+# Returns
+# string: a single string with newline characters ('\n') where the breaks should be
+
+import textwrap
+
+def wrap(string, max_width):
+    result = textwrap.fill(string, max_width)
+    return result
+#Ask the user for the string and max_width
+string = input("Please enter the string you want: ")
+max_width = int(input("Please enter the max_width: "))
+result = wrap(string, max_width)
+print(result)
