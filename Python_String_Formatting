@@ -1,0 +1,40 @@
+#Challenge 20: 13, Jan, 2025: Given an integer,n , print the following values for each integer i from  1 to n:
+# Decimal
+# Octal
+# Hexadecimal (capitalized)
+# Binary
+
+# Function Description
+# Complete the print_formatted function in the editor below.
+# print_formatted has the following parameters:
+# int number: the maximum value to print
+
+# Prints
+# The four values must be printed on a single line in the order specified above for each  i from  1 to number.
+# Each value should be space-padded to match the width of the binary value of number
+# and the values should be separated by a single space.
+
+#First Write a function for this task
+def print_formatted(number):
+#we must define width, because in the print description it is specified that each value should be space-padded to
+#math the width of the binary value of the number.
+    width = len(bin(number)[2:])
+#loop because we must print decimal, octal, hexadecimal and binary for number from i to n
+    for i in range(1, number+1):
+    # for the decimal of number the string function is used
+        deci = str(i)
+    #for the octal of the number, the bult-in octal function is used,
+    # we used the index from 2 to prevent writing of characters like zero and X
+        octa = oct(i)[2:]
+    #for hexadecimals used the bult-in hex function and said capitalized so use upper
+        hexa = hex(i)[2:].upper()
+    #for binary used the bult-in bin function
+        bina = bin(i)[2:]
+    #used rjust because of the space-padded
+        print(deci.rjust(width), octa.rjust(width), hexa. rjust(width), bina.rjust(width))
+
+try:
+    n = int(input("Please enter an integer number: "))
+    print_formatted(n)
+except:
+    print("You enter bad input! Try again!")
